@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+cats:
+  title: cats
+  publisher: bit
+  isbn: 45fks
+  publishing_date: 30-3-2007
+
+dogs:
+  title: dogs
+  publisher: dbit
+  isbn: 45hs
+  publishing_date: 30-3-2017

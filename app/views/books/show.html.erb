@@ -1,0 +1,20 @@
+<%provide(:title,@book.title)%>
+<div class="row">
+	 <aside class="col-md-4">
+	 	  <section class="user_info">
+	 	  	<h1>
+				<%=@book.title%> book
+			</h1>
+			<h2>publisher : <aside class="color"><%=@book.publisher%> </aside><br>
+			    ISBN : <aside class="color"><%=@book.isbn%></aside> <br>
+			    publishing date :<aside class="color"> <%=@book.publishing_date%></aside><br>
+			    Authors :
+			    <%@authors=@book.authors.all%>
+				<%@authors.each do |f|%><br><aside class="color">
+					<%=f.name%>
+				<%end%>
+			   </aside>
+			</h2>
+		</section>
+	</aside>
+</div>

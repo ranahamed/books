@@ -1,0 +1,27 @@
+<%provide(:title, 'Home')%>
+
+<div class="center jumbotron">
+<h1> Welcome to BOOK ONLINE STORE </h1>
+</div>
+
+<ul class="books">
+    <% @books=@books[0..10] %>
+	<% @books.each do|book| %>
+		<li>
+		  <h4><%=link_to book.title, book%></h4>
+		  <h5>publisher : <%= book.publisher %></h5>
+			  <h5>ISBN : <%= book.isbn %></h5>
+			  <h5>publishing date : <%=book.publishing_date%></h5>
+			  <h5>Authors : <%@authors=book.authors.all%>
+				<%@authors.each do |f|%>
+					<%=f.name%> ,
+				<%end%></h5>
+				<h5>created at: <%=book.created_at%></h5>
+		  <%if logged_in? %>
+		  	<%=link_to "delete" , book , method: :delete , data: {confirm: "you sure?"} %>
+		  	| <%=link_to "edit" , edit_book_path(book) %>
+		  <% end %>
+	    </li>
+	<%end%>
+	
+</ul>

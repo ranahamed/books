@@ -1,0 +1,12 @@
+<%provide(:title,"search")%>
+<h1>find book</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+	<%= form_tag(books_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search books" %>
+<%= submit_tag "Search" %>
+<% end %>
+	
+   
+  </div>
+</div>
